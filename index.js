@@ -27,6 +27,7 @@ app.use('/api/cart', cartRoute);
 app.use('/api/orders', orderRoute);
 app.use('/api/checkout', stripeRoute);
 
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");
