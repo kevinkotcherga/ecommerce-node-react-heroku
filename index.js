@@ -10,6 +10,7 @@ const stripeRoute = require('./routes/stripe');
 const orderRoute = require('./routes/order');
 
 const cors = require('cors');
+const path = require('path');
 
 dotenv.config();
 
