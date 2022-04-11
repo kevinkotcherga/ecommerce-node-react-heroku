@@ -14,15 +14,18 @@ const path = require('path');
 
 dotenv.config();
 
-MONGO_URL = 'mongodb+srv://ecommerce:ecommerce@cluster0.rdvra.mongodb.net/shop?retryWrites=true&w=majority';
 STRIPE_KEY = 'sk_test_51KbMuMGV1UkxUwjyTjzMSHgDW291WpBmgLCq8lpefbAWP4Ne6Xd0yuUdrRmJnEuNBhU3vofwpMcKxkv05bUeRQwA00wFOv8rB7';
 JWT_SECRET = 'ecommerce';
 PASS_SECRET = 'ecommerce';
 
-mongoose.connect(process.env.MONGO_URL)
-  .then(()=>console.log("DBConnection Successful!"))
-  .catch((err)=>{console.log(err)
-  });
+mongoose
+	.connect(
+		'mongodb+srv://ecommerce:ecommerce@cluster0.rdvra.mongodb.net/shop?retryWrites=true&w=majority',
+	)
+	.then(() => console.log('DBConnection Successful!'))
+	.catch(err => {
+		console.log(err);
+	});
 
 app.use(cors());
 app.use(express.json());
